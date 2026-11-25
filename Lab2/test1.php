@@ -1,11 +1,6 @@
 <?php
-// 1. Mảng menu
 $menus = ["Trang chủ", "Tin tức", "Liên hệ", "Giới thiệu"];
-
-// 2. Mảng môn học
 $subjects = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
-
-// 3. Mảng danh sách sinh viên
 $students = [
     [
         "id" => "SV001",
@@ -49,8 +44,6 @@ $students = [
         body {
             padding: 20px;
         }
-
-        /* 1. CSS Menu */
         nav {
             background: rgb(4, 40, 94);
         }
@@ -72,8 +65,6 @@ $students = [
         nav ul li:hover {
             background: #084298;
         }
-
-        /* 2. CSS Danh sách môn học (.s1) */
         .s1 {
             max-width: 500px;
             margin: 20px auto;
@@ -102,8 +93,6 @@ $students = [
             background: #cfe2ff;
             transform: translateX(5px);
         }
-
-        /* 3. CSS Danh sách sinh viên (.s2) */
         .s2 {
             max-width: 850px;
             margin: 20px auto;
@@ -145,8 +134,6 @@ $students = [
     </style>
 </head>
 <body>
-
-    <!-- 1. Menu -->
     <nav>
         <ul>
             <?php foreach ($menus as $menu) { ?>
@@ -156,8 +143,6 @@ $students = [
             <?php } ?>
         </ul>
     </nav>
-
-    <!-- 2. Danh sách môn học -->
     <section class="s1">
         <h3>Danh sách ngôn ngữ sử dụng trong môn học</h3>
         <ul>
@@ -167,8 +152,6 @@ $students = [
         </ul>
         <p><strong>Tổng số môn học: <?= count($subjects) ?></strong></p>
     </section>
-
-    <!-- 3. Danh sách sinh viên -->
     <section class="s2">
         <h3>Danh sách sinh viên</h3>
         <table>
