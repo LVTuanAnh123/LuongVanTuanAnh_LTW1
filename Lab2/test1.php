@@ -27,6 +27,26 @@ $students = [
         "class" => "CNTT3"
     ]
 ];
+$faculties = [
+"Công nghệ thông tin",
+"Quản trị kinh doanh",
+"Kế toán",
+"Ngôn ngữ Anh"
+];
+$classes = [
+"A1" => "CNTT1",
+"A2" => "CNTT2",
+"A3" => "CNTT3",
+"A4" => "CNTT4"
+];
+$genders = ["Nam", "Nữ", "Khác"];
+$hobbies = [
+"LT" => "Lập trình",
+"DS" => "Đọc sách",
+"AN" => "Âm nhạc",
+"DL" => "Du lịch",
+"TT" => "Thể thao"
+];
 ?>
 
 <!DOCTYPE html>
@@ -173,6 +193,53 @@ $students = [
             <?php } ?>
         </table>
     </section>
-
+    <section class="s3">
+        <h3>ĐĂNG KÝ THÔNG TIN SINH VIÊN </h3>
+        <form action="#" method="post">
+            <div>
+                <label >Họ và tên </label>
+                <input type="text">
+            </div>
+        <div>
+            <label>Khoa</label>
+            <select name="faculty">
+                <?php foreach ($faculties as $faculty) { ?>
+                    <option><?= $faculty ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <div>
+            <label >Lớp</label>
+            <select name="class ">
+                <?php foreach ($classes as $key => $class) { ?>
+                    <option value="<?= $key ?>">
+                        <?= $class ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </div>
+        <div>
+            <label >Giới tính</label>
+                <?php foreach ($genders as $gender) { ?>
+            <label>
+                <input type="radio" name="gender"
+                    value="<?= $gender ?>">
+                <?= $gender ?>
+            </label>
+                <?php } ?>
+        </option>
+        </div>
+        <div>
+            <label>Sở Thích</label>
+            <?php foreach ($hobbies as $key => $hobby) { ?>
+        <label>
+                <input type="checkbox" name="hobbies[]"
+                    value="<?= $key ?>">
+                <?= $hobby ?>
+        </label>
+<?php } ?>
+        </div>
+        </form>
+    </section>
 </body>
 </html>
