@@ -2,6 +2,32 @@
 // Khởi tạo mảng menu
 $menus = ["Trang chủ", "Tin tức", "Liên hệ", "Giới thiệu"];
 $subjects = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
+$students = [
+    [
+        "id" => "SV001",
+        "name" => "Nguyễn Văn An",
+        "gender" => "Nam",
+        "class" => "CNTT1" 
+    ],
+    [
+        "id" => "SV002",
+        "name" => "Trần Thị Bình",
+        "gender" => "Nữ",
+        "class" => "CNTT2"
+    ],
+    [
+        "id" => "SV003",
+        "name" => "Lê Văn Cường",
+        "gender" => "Nam",
+        "class" => "CNTT1"
+    ],
+    [
+        "id" => "SV004",
+        "name" => "Phạm Thị Dung",
+        "gender" => "Nữ",
+        "class" => "CNTT3"
+    ]
+];
 ?>
 
 <!DOCTYPE html>
@@ -75,10 +101,10 @@ $subjects = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
             border-radius: 5px;
             transition: .3s;
         }
-.s1 li:hover{
-background: #cfe2ff;
-transform: translateX(5px);
-}
+        .s1 li:hover{
+            background: #cfe2ff;
+            transform: translateX(5px);
+        }
     </style>
 </head>
 
@@ -103,6 +129,28 @@ transform: translateX(5px);
 }
 ?>
 </ul>
+</section>
+<section class 2="s2">
+    <h3>Danh sách sinh viên </h3>
+    <table>
+            <tr>
+                <th>STT</th>
+                <th>Mã sinh viên</th>
+                <th>Họ và tên</th>
+                <th>Giới tính</th>
+                <th>Lớp</th>
+            </tr>
+            <?php foreach ($students as $index => $student) { ?>
+                <tr>
+                    <td><?= $index + 1 ?></td>
+                    <td><?= $student["id"] ?></td>
+                    <td><?= $student["name"] ?></td>
+                    <td><?= $student["gender"] ?></td>
+                    <td><?= $student["class"] ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+
 </section>
 </body>
 </html>
