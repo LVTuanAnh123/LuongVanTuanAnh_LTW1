@@ -1,13 +1,17 @@
 <?php
-// Khởi tạo mảng menu
+// 1. Mảng menu
 $menus = ["Trang chủ", "Tin tức", "Liên hệ", "Giới thiệu"];
+
+// 2. Mảng môn học
 $subjects = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
+
+// 3. Mảng danh sách sinh viên
 $students = [
     [
         "id" => "SV001",
         "name" => "Nguyễn Văn An",
         "gender" => "Nam",
-        "class" => "CNTT1" 
+        "class" => "CNTT1"
     ],
     [
         "id" => "SV002",
@@ -32,31 +36,31 @@ $students = [
 
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test 1 - Menu</title>
+    <title>Test 1</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        body {
+            padding: 20px;
+        }
 
+        /* 1. CSS Menu */
         nav {
             background: rgb(4, 40, 94);
         }
-
         nav ul {
             list-style: none;
             display: flex;
         }
-
         nav li {
             flex: 1;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -65,35 +69,28 @@ $students = [
             padding: 15px;
             text-align: center;
         }
-
         nav ul li:hover {
             background: #084298;
         }
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            padding: 20px;
-        }
-        .s1{
+
+        /* 2. CSS Danh sách môn học (.s1) */
+        .s1 {
             max-width: 500px;
-            margin: auto;
+            margin: 20px auto;
             background: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
         }
-        .s1 h3{
+        .s1 h3 {
             text-align: center;
             color: #0d6efd;
             margin-bottom: 20px;
         }
-        .s1 ul{
+        .s1 ul {
             list-style: none;
         }
-        .s1 li{
+        .s1 li {
             padding: 12px;
             margin-bottom: 10px;
             background: #e7f1ff;
@@ -101,15 +98,55 @@ $students = [
             border-radius: 5px;
             transition: .3s;
         }
-        .s1 li:hover{
+        .s1 li:hover {
             background: #cfe2ff;
             transform: translateX(5px);
         }
+
+        /* 3. CSS Danh sách sinh viên (.s2) */
+        .s2 {
+            max-width: 850px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 25px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+        }
+        .s2 h3 {
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .s2 table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .s2 th {
+            background: #0d6efd;
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #4d94ff;
+        }
+        .s2 td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+            color: #212529;
+        }
+        .s2 tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .s2 tr:hover {
+            background: #dbeafe;
+        }
     </style>
 </head>
-
 <body>
 
+    <!-- 1. Menu -->
     <nav>
         <ul>
             <?php foreach ($menus as $menu) { ?>
@@ -120,19 +157,21 @@ $students = [
         </ul>
     </nav>
 
-<section class="s1">
-    <h3>Danh sách ngôn ngữ sử dụng trong môn học</h3>
-    <ul>
-    <?php
-    foreach($subjects as $subject){
-    echo "<li>$subject</li>";
-}
-?>
-</ul>
-</section>
-<section class 2="s2">
-    <h3>Danh sách sinh viên </h3>
-    <table>
+    <!-- 2. Danh sách môn học -->
+    <section class="s1">
+        <h3>Danh sách ngôn ngữ sử dụng trong môn học</h3>
+        <ul>
+            <?php foreach ($subjects as $subject) {
+                echo "<li>$subject</li>";
+            } ?>
+        </ul>
+        <p><strong>Tổng số môn học: <?= count($subjects) ?></strong></p>
+    </section>
+
+    <!-- 3. Danh sách sinh viên -->
+    <section class="s2">
+        <h3>Danh sách sinh viên</h3>
+        <table>
             <tr>
                 <th>STT</th>
                 <th>Mã sinh viên</th>
@@ -150,7 +189,7 @@ $students = [
                 </tr>
             <?php } ?>
         </table>
+    </section>
 
-</section>
 </body>
 </html>
